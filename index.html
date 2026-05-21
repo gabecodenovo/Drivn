@@ -1,11 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR" id="html">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Drivn</title>
+  <title>Página Bilíngue</title>
 </head>
 <body>
-  
+
+  <button onclick="toggleLang()">🇺🇸 English</button>
+
+  <h1 data-pt="Bem-vindo!" data-en="Welcome!"></h1>
+  <p data-pt="Este é um site em português." data-en="This is a website in English."></p>
+  <h1 data-pt="Opa" data-en="Hi"><h1></h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    let lang = 'pt-BR';
+
+    function toggleLang() {
+      lang = lang === 'pt-BR' ? 'en' : 'pt-BR';
+      document.getElementById('html').lang = lang;
+
+      document.querySelectorAll('[data-pt]').forEach(el => {
+        el.textContent = lang === 'pt-BR' ? el.dataset.pt : el.dataset.en;
+      });
+
+      document.querySelector('button').textContent =
+        lang === 'pt-BR' ? '🇺🇸 English' : '🇧🇷 Português';
+    }
+
+    toggleLang(); toggleLang(); // inicializa em pt-BR
+  </script>
+
 </body>
 </html>
