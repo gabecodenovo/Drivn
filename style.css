@@ -1,3 +1,4 @@
 body{
-    bacrgrund-color: black
+    background-image:url(./assets/de.jpg);
+    background-size:cover;
 }
