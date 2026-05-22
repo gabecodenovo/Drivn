@@ -2,3 +2,9 @@ body{
     background-image:url(./assets/download.jpg);
     background-size:cover;
 }
+#Lingua{
+    posizion:absolute;
+    top50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
