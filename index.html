@@ -3,22 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <title>Drivn</title>
+  <link rel="icon" type="image/svg+xml" href="drivn_logo_sem1.svg">
   <link rel="stylesheet" href="style.css">
+  <style>
+    nav {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    nav img {
+      height: 40px;
+    }
+  </style>
 </head>
 <body>
-<head>
-  <link rel="icon" type="image/svg+xml" href="drivn_logo_sem1.svg">
-</head>
+
+  <!-- NAVBAR COM LOGO -->
+  <nav>
+    <img src="drivn_logo_sem1.svg" alt="Drivn Logo">
+  </nav>
+
   <button id="Lingua" data-code="btn" onclick="toggleLang()"></button>
+
   <div id="g_id_onload"
-  data-client_id="1053709473946-e9brjikoia5rn2d519nvcb89l8kid7h5.apps.googleusercontent.com"
-  data-callback="handleLogin">
-</div>
-<div class="g_id_signin"
-  data-type="standard"
-  data-locale="pt-BR">
-</div>
-<h1 data-pt="Adelina" data-en="Adelina"></h1>
+    data-client_id="1053709473946-e9brjikoia5rn2d519nvcb89l8kid7h5.apps.googleusercontent.com"
+    data-callback="handleLogin">
+  </div>
+  <div class="g_id_signin"
+    data-type="standard"
+    data-locale="pt-BR">
+  </div>
+
+  <h1 data-pt="Adelina" data-en="Adelina"></h1>
 
   <script>
     let lang = 'pt-BR';
@@ -37,13 +55,14 @@
 
     toggleLang(); toggleLang();
   </script>
+
   <script src="https://accounts.google.com/gsi/client" async></script>
-<script>
-  function handleLogin(response) {
-    const usuario = JSON.parse(atob(response.credential.split('.')[1]));
-    alert('Bem-vindo, ' + usuario.name + '!');
-  }
-</script>
+  <script>
+    function handleLogin(response) {
+      const usuario = JSON.parse(atob(response.credential.split('.')[1]));
+      alert('Bem-vindo, ' + usuario.name + '!');
+    }
+  </script>
 
 </body>
 </html>
