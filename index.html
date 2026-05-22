@@ -8,6 +8,14 @@
 <body>
 
   <button id="Lingua" data-code="btn" onclick="toggleLang()"></button>
+  <div id="g_id_onload"
+  data-client_id="drivn-497100"
+  data-callback="handleLogin">
+</div>
+<div class="g_id_signin"
+  data-type="standard"
+  data-locale="pt-BR">
+</div>
 
   <script>
     let lang = 'pt-BR';
@@ -26,6 +34,13 @@
 
     toggleLang(); toggleLang();
   </script>
+  <script src="https://accounts.google.com/gsi/client" async></script>
+<script>
+  function handleLogin(response) {
+    const usuario = JSON.parse(atob(response.credential.split('.')[1]));
+    alert('Bem-vindo, ' + usuario.name + '!');
+  }
+</script>
 
 </body>
 </html>
