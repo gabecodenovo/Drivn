@@ -7,16 +7,33 @@
   <link rel="icon" href="drivn-app-icon.png" type="image/png">
 </head>
 <body>
+<div id="Configuração">
+  <div id="Lingua_config">
   <button id="Lingua" data-code="btn" onclick="toggleLang()"></button>
-  <div id="g_id_onload"
-  data-client_id="1053709473946-e9brjikoia5rn2d519nvcb89l8kid7h5.apps.googleusercontent.com"
-  data-callback="handleLogin">
+ 
+
+
+  </div>
 </div>
-<div class="g_id_signin"
+
+<div id="Tela login">
+  <div class="g_id_signin"
   data-type="standard"
   data-locale="pt-BR">
 </div>
 
+ <div id="g_id_onload"
+  data-client_id="1053709473946-e9brjikoia5rn2d519nvcb89l8kid7h5.apps.googleusercontent.com"
+  data-callback="handleLogin">
+</div>
+  <script src="https://accounts.google.com/gsi/client" async></script>
+<script>
+  function handleLogin(response) {
+    const usuario = JSON.parse(atob(response.credential.split('.')[1]));
+    alert('Bem-vindo, ' + usuario.name + '!');
+  }
+</script>
+</div>
   <script>
     let lang = 'pt-BR';
 
@@ -34,22 +51,5 @@
 
     toggleLang(); toggleLang();
   </script>
-  <script src="https://accounts.google.com/gsi/client" async></script>
-<script>
-  function handleLogin(response) {
-    const usuario = JSON.parse(atob(response.credential.split('.')[1]));
-    alert('Bem-vindo, ' + usuario.name + '!');
-  }
-</script>
-<!-- SALA 1: aparece quando não tá logado -->
-<div id="tela-login">
-  <!-- botão do Google fica aqui -->
-</div>
-
-<!-- SALA 2: aparece depois do login -->
-<div id="tela-principal" style="display: none">
-  <!-- nome e foto do usuário ficam aqui -->
-</div>
-
 </body>
 </html>
