@@ -1,8 +1,5 @@
 body{
     background-image:url(./assets/download.jpg);
     background-size:cover;
-}
-
-h1{
-    color:brown
+    background-size: 300px;
 }
