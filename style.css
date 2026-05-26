@@ -11,8 +11,8 @@ body {
 }
 
 #caixa-login {
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(230, 230, 230, 0.7);
     padding: 40px;
-   border: 5px solid red
+   border: 2.5px solid red
    ;
 }
