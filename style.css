@@ -1,13 +1,16 @@
-body{
-    background-image:url(./assets/download.jpg);
-    background-size:cover;
+body {
+    background-image: url(./assets/download.jpg);
     background-size: 300px;
+    background-size: cover;
 }
 
 #Tela-login {
-  height: 100vh;        
-  display: flex;           
-  justify-content: center; 
-  align-items: center;
-  background-color: rgba(0,0,0,0.7);
+    height: 100vh;        
+    display: flex;           
+    justify-content: center; 
+    align-items: center;
+    background-color: rgba(0,0,0,0.7);
+}
+#caixa-login {
+  background-color: rgba(255, 255, 255, 0.562)
 }
