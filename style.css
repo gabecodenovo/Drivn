@@ -2,6 +2,7 @@ body {
     background-image: url(./assets/de.jpg);
     background-size: cover;
     margin:0;
+     background-color: rgba(0, 0, 0, 0.7);
 }
 
 #Tela-login {
@@ -9,7 +10,7 @@ body {
     display: flex;           
     justify-content: center; 
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.808);
     height: 100vh;
 }
 
