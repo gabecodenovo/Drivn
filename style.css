@@ -1,0 +1,27 @@
+body {
+    background-image: url(./assets/de.jpg);
+    background-size: cover;
+    margin:0;
+     background-color: rgba(0, 0, 0, 0.7);
+}
+
+#Tela-login {
+    height: 100vh;        
+    display: flex;           
+    justify-content: center; 
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.808);
+    height: 100vh;
+}
+
+#caixa-login {
+    background-color: rgba(0, 0, 0, 0.274);
+    padding: 40px;
+   border: 1px solid red;
+    border-radius: 10px;
+}
+ p{
+    font-family: "Oi Static", cursive;
+    color:aliceblue
+
+}
