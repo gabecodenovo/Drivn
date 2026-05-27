@@ -23,5 +23,6 @@ body {
  p{
     font-family: "Oi Static", cursive;
     color:aliceblue
+   border: 1px solid red;
 
 }
