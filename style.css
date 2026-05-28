@@ -1,36 +1,44 @@
+/* ===== Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== Body ===== */
 body {
-     background-color: rgba(0, 0, 0, 0.7);
     background-image: url(./assets/de.jpg);
     background-size: cover;
-    margin:0;
+    background-position: center;
+    background-attachment: fixed;
 }
 
+/* ===== Tela de Login ===== */
 #Tela-login {
-    height: 100vh;        
-    display: flex;           
-    justify-content: center; 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.808);
-     background-size: cover;
-    margin:0;
+    background-color: rgba(0, 0, 0, 0.75);
 }
 
+/* ===== Caixa de Login ===== */
 #caixa-login {
-    background-color: rgba(0, 0, 0, 0.274);
+    background-color: rgba(0, 0, 0, 0.3);
     padding: 40px;
-   border: 1px solid red;
+    border: 1px solid red;
     border-radius: 10px;
 }
-#Logo-login{
-width: 5px;
-height: 5px;
-}
- p{
-    font-family: "Oi Static", cursive;
-    color:aliceblue
 
+/* ===== Logo ===== */
+#Logo-login {
+    width: 120px;
+    height: auto;
 }
-h1{
+
+/* ===== Tipografia ===== */
+p,
+h1 {
     font-family: "Oi Static", cursive;
-    color:aliceblue;
+    color: aliceblue;
 }
