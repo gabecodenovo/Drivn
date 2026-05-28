@@ -11,6 +11,7 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    margin: 0;
 }
 
 /* ===== Tela de Login ===== */
@@ -20,6 +21,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.75);
+    width: auto;
 }
 
 /* ===== Caixa de Login ===== */
@@ -28,12 +30,15 @@ body {
     padding: 40px;
     border: 1px solid red;
     border-radius: 10px;
+    width: 400px;
 }
 
 /* ===== Logo ===== */
 #Logo-login {
+    margin: auto;
     width: 120px;
     height: auto;
+    border-radius: 50%
 }
 
 /* ===== Tipografia ===== */
