@@ -20,6 +20,9 @@ body {
    border: 1px solid red;
     border-radius: 10px;
 }
+#logo-login{
+    tamanho: 100px;
+}
  p{
     font-family: "Oi Static", cursive;
     color:aliceblue
