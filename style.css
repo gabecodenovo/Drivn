@@ -1,8 +1,8 @@
 body {
+     background-color: rgba(0, 0, 0, 0.7);
     background-image: url(./assets/de.jpg);
     background-size: cover;
     margin:0;
-    background-color: rgba(0, 0, 0, 0.7);
 }
 
 #Tela-login {
@@ -11,7 +11,8 @@ body {
     justify-content: center; 
     align-items: center;
     background-color: rgba(0, 0, 0, 0.808);
-    height: 100vh;
+     background-size: cover;
+    margin:0;
 }
 
 #caixa-login {
