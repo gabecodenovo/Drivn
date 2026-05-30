@@ -18,7 +18,7 @@
   <div id="barra-nav">
  <img src="./assets/a16698b6-9e1c-49af-9a21-8df69f720cb3 (1).jpg" alt="Logo" id="Logo-barra">
     <div id="Lingua-config">
-      <button id="Lingua" data-code="btn" onclick="toggleLang()"></button>
+      <button id="Lingua" data-code="btn" onclick="salvarConta()"></button>
     </div>
      <img id="foto-usuario">
   <p id="nome-usuario"></p>
@@ -74,9 +74,12 @@ function toggleLang() {
 toggleLang(); toggleLang();
   </script>
 <script >
- function sair() {
+function sair() {
   google.accounts.id.revoke(emailUsuario, () => {
     google.accounts.id.disableAutoSelect();
+    localStorage.removeItem('nome');
+    localStorage.removeItem('foto');
+    localStorage.removeItem('email');
     emailUsuario = '';
     document.getElementById('Tela-principal').style.display = 'none';
     document.getElementById('Tela-login').style.display = 'block';
@@ -93,6 +96,29 @@ function handleLogin(response) {
   document.getElementById('foto-usuario').src = usuario.picture;
   document.getElementById('Tela-login').style.display = 'none';
   document.getElementById('Tela-principal').style.display = 'block';
+}
+</script>
+<script>
+window.onload = function() {
+  const nome = localStorage.getItem('nome');
+  const foto = localStorage.getItem('foto');
+  const email = localStorage.getItem('email');
+
+  if (nome && foto && email) {
+    emailUsuario = email;
+    document.getElementById('nome-usuario').textContent = nome;
+    document.getElementById('foto-usuario').src = foto;
+    document.getElementById('Tela-login').style.display = 'none';
+    document.getElementById('Tela-principal').style.display = 'block';
+  }
+}
+</script>
+<script>
+function salvarConta() {
+  localStorage.setItem('nome', document.getElementById('nome-usuario').textContent);
+  localStorage.setItem('foto', document.getElementById('foto-usuario').src);
+  localStorage.setItem('email', emailUsuario);
+  alert('Conta salva! Na próxima vez você já entra direto.');
 }
 </script>
 </body>
