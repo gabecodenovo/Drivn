@@ -47,20 +47,23 @@
     let lang = 'pt-BR';
     let emailUsuario = '';
 
-    window.onload = function () {
-      const nome = localStorage.getItem('nome');
-      const foto = localStorage.getItem('foto');
-      const email = localStorage.getItem('email');
+ window.onload = function () {
+  const nome = localStorage.getItem('nome');
+  const foto = localStorage.getItem('foto');
+  const email = localStorage.getItem('email');
 
-      if (nome && foto && email) {
-        emailUsuario = email;
-        document.getElementById('nome-usuario').textContent = nome;
-        document.getElementById('foto-usuario').src = foto;
-        mostrarTelaPrincipal();
-      }
+  if (nome && foto && email) {
+    emailUsuario = email;
+    document.getElementById('nome-usuario').textContent = nome;
+    document.getElementById('foto-usuario').src = foto;
+    mostrarTelaPrincipal();
+  } else {
+    document.getElementById('btn-sair').style.display = 'none';
+    document.getElementById('btn-salvar').style.display = 'none';
+  }
 
-      toggleLang(); toggleLang();
-    }
+  toggleLang(); toggleLang();
+}
 
     function handleLogin(response) {
       const usuario = JSON.parse(atob(response.credential.split('.')[1]));
