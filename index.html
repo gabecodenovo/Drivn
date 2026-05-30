@@ -22,7 +22,7 @@
     </div>
      <img id="foto-usuario">
   <p id="nome-usuario"></p>
-  <button data-code="Sair" data-pt="Sair" data-en="Logout" onclick="location.reload()"></button>
+  <button data-code="Sair" data-pt="Sair" data-en="Logout" onclick="sair()"></button>
   <button data-code="Salvar Conta" data-pt="Salvar Conta" data-en="Save Account" onclick="alert('Funcionalidade de salvar conta ainda não implementada')"></button>
   </div>
 
@@ -73,6 +73,15 @@ function toggleLang() {
 
 toggleLang(); toggleLang();
   </script>
+<script >
+  function sair() {
+  google.accounts.id.revoke(document.getElementById('foto-usuario').src, () => {
+    google.accounts.id.disableAutoSelect();
+    document.getElementById('Tela-principal').style.display = 'none';
+    document.getElementById('Tela-login').style.display = 'block';
 
+  });
+}
+</script>
 </body>
 </html>
