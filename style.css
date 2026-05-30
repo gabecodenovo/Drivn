@@ -57,6 +57,7 @@ h1 {
    width: 100%;
    display: flex;
    background-color: rgb(0, 0, 0);
+   border: 1px solid red;
 }
 #foto-usuario{
     width: 30px;
