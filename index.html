@@ -22,7 +22,7 @@
     </div>
      <img id="foto-usuario">
   <p id="nome-usuario"></p>
-  <button data-code="Sair" data-pt="Sair" data-en="Logout" onclick="location.reload()"></button>
+  <button data-code="Sair" data-pt="Sair" data-en="Logout" onclick="sair()"></button>
   <button data-code="Salvar Conta" data-pt="Salvar Conta" data-en="Save Account" onclick="alert('Funcionalidade de salvar conta ainda não implementada')"></button>
   </div>
 
@@ -74,13 +74,25 @@ function toggleLang() {
 toggleLang(); toggleLang();
   </script>
 <script >
-  function sair() {
-  google.accounts.id.revoke(document.getElementById('foto-usuario').src, () => {
+ function sair() {
+  google.accounts.id.revoke(emailUsuario, () => {
     google.accounts.id.disableAutoSelect();
+    emailUsuario = '';
     document.getElementById('Tela-principal').style.display = 'none';
     document.getElementById('Tela-login').style.display = 'block';
-
   });
+}
+</script>
+<script>
+  let emailUsuario = '';
+
+function handleLogin(response) {
+  const usuario = JSON.parse(atob(response.credential.split('.')[1]));
+  emailUsuario = usuario.email; // ← salva o email
+  document.getElementById('nome-usuario').textContent = usuario.name;
+  document.getElementById('foto-usuario').src = usuario.picture;
+  document.getElementById('Tela-login').style.display = 'none';
+  document.getElementById('Tela-principal').style.display = 'block';
 }
 </script>
 </body>
