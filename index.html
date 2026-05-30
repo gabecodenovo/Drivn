@@ -10,7 +10,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Modak&family=Oi&family=Oswald:wght@200..700&family=Supermercado+One&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
 <body>
 
   <div id="barra-nav">
@@ -20,8 +19,8 @@
     </div>
     <img id="foto-usuario">
     <p id="nome-usuario"></p>
-    <button id="btn-sair" data-pt="Sair" data-en="Logout" style="display:none" onclick="sair()"></button>
-    <button id="btn-salvar" data-pt="Salvar Conta" data-en="Save Account" style="display:none" onclick="salvarConta()"></button>
+    <button id="btn-sair" style="display:none" onclick="sair()">Sair</button>
+    <button id="btn-salvar" style="display:none" onclick="salvarConta()">Salvar Conta</button>
   </div>
 
   <div id="Tela-login">
@@ -48,7 +47,6 @@
     let lang = 'pt-BR';
     let emailUsuario = '';
 
-    // ✅ Verifica conta salva ao abrir o site
     window.onload = function () {
       const nome = localStorage.getItem('nome');
       const foto = localStorage.getItem('foto');
@@ -64,7 +62,6 @@
       toggleLang(); toggleLang();
     }
 
-    // ✅ Login com Google
     function handleLogin(response) {
       const usuario = JSON.parse(atob(response.credential.split('.')[1]));
       emailUsuario = usuario.email;
@@ -73,7 +70,6 @@
       mostrarTelaPrincipal();
     }
 
-    // ✅ Mostra tela principal e botões
     function mostrarTelaPrincipal() {
       document.getElementById('Tela-login').style.display = 'none';
       document.getElementById('Tela-principal').style.display = 'block';
@@ -81,7 +77,6 @@
       document.getElementById('btn-salvar').style.display = 'inline-block';
     }
 
-    // ✅ Sair da conta
     function sair() {
       google.accounts.id.revoke(emailUsuario, () => {
         google.accounts.id.disableAutoSelect();
@@ -96,7 +91,6 @@
       });
     }
 
-    // ✅ Salvar conta
     function salvarConta() {
       localStorage.setItem('nome', document.getElementById('nome-usuario').textContent);
       localStorage.setItem('foto', document.getElementById('foto-usuario').src);
@@ -104,7 +98,6 @@
       alert('Conta salva! Na próxima vez você já entra direto.');
     }
 
-    // ✅ Trocar idioma
     function toggleLang() {
       lang = lang === 'pt-BR' ? 'en' : 'pt-BR';
       document.getElementById('html').lang = lang;
