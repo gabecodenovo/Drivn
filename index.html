@@ -106,13 +106,12 @@ function sair() {
   }
 
   limparSessao();
-  showScreen('login');
 
-  // Rerenderiza o botão do Google na tela de login
-  google.accounts.id.renderButton(
-    document.getElementById('btn-google'),
-    { theme: 'outline', size: 'large', locale: lang }
-  );
+  // Limpa nome e foto da barra
+  document.getElementById('nome-usuario').textContent = '';
+  document.getElementById('foto-usuario').src = '';
+
+  showScreen('login');
 }
   function limparSessao() {
     localStorage.removeItem('nome');
