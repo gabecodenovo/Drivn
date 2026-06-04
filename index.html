@@ -97,9 +97,7 @@
       return null;
     }
   }
-
-  function sair() {
-  // revoke só se entrou pelo Google (não pelo localStorage)
+function sair() {
   if (window.google?.accounts?.id && emailUsuario) {
     try {
       google.accounts.id.revoke(emailUsuario, () => {});
@@ -109,8 +107,13 @@
 
   limparSessao();
   showScreen('login');
-}
 
+  // Rerenderiza o botão do Google na tela de login
+  google.accounts.id.renderButton(
+    document.getElementById('btn-google'),
+    { theme: 'outline', size: 'large', locale: lang }
+  );
+}
   function limparSessao() {
     localStorage.removeItem('nome');
     localStorage.removeItem('foto');
