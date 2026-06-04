@@ -160,6 +160,13 @@ function sair() {
     lang = lang === 'pt-BR' ? 'en' : 'pt-BR';
     initLang();
   }
+  function showScreen(tela) {
+  const isLogado = tela === 'principal';
+  document.getElementById('Tela-login').style.display     = isLogado ? 'none'         : 'flex';
+  document.getElementById('Tela-principal').style.display = isLogado ? 'block'        : 'none';
+  document.getElementById('btn-sair').style.display       = isLogado ? 'inline-block' : 'none';
+  document.getElementById('btn-salvar').style.display     = isLogado ? 'inline-block' : 'none';
+}
 </script>
 </body>
 </html>
